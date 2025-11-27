@@ -23,7 +23,7 @@ const products = [
         category: "Mesas",
         description: "Mesa dormitorio madera."
     },
-    { 
+    {
         id: 4,
         name: "Mueble Playa",
         price: 99990,
@@ -47,10 +47,63 @@ products.forEach(product => {
                     <button class="btn btn-dark w-100 add-to-cart" data-id="${product.id}">
                         Agregar
                     </button>
+                    <button class="btn btn-warning w-100 btn-sm mt-1 ver-mas" data-id="${product.id}">Ver más</button>
                 </div>
             </div>
         </div>
     `;
     productsContainer.innerHTML += card;
 });
+
+let cart = [];
+let cartCount = 0;
+
+const cartCountBadge = document.getElementById("cartCount");
+
+document.addEventListener("click", e => {
+    if (e.target.classList.contains("add-to-cart")) {
+        const id = e.target.dataset.id;
+
+        const product = products.find(p => p.id == id);
+        if (!product) return; // Evita errores silenciosos
+
+        cart.push(product);
+
+        cartCount++;
+        cartCountBadge.textContent = cartCount;
+    }
+
+     if (e.target.classList.contains("ver-mas")) {
+        const id = e.target.dataset.id;
+
+        localStorage.setItem("productoSeleccionado", id);
+
+        window.location.href = "detalle.html";
+    }
+});
+
+const cartModal = new bootstrap.Modal(document.getElementById("cartModal"));
+const cartItemsContainer = document.getElementById("cartItems");
+
+document.getElementById("openCart").addEventListener("click", () => {
+    renderCartItems();
+    cartModal.show();
+});
+
+function renderCartItems() {
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p class='text-muted'>Tu carrito está vacío.</p>";
+        return;
+    }
+
+    cartItemsContainer.innerHTML = cart.map(item => `
+        <div class="d-flex align-items-center mb-3">
+            <img src="${item.image}" class="me-3" width="60">
+            <div>
+                <p class="m-0 fw-bold">${item.name}</p>
+                <small class="text-muted">$${item.price.toLocaleString()}</small>
+            </div>
+        </div>
+    `).join("");
+}
 
