@@ -119,3 +119,22 @@ header {
         height: 120px;
     }
 }
+
+/* .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .add-to-cart,
+.card-body .ver-mas {
+    margin-top: auto;
+} */
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.botones {
+    margin-top: auto;
+}

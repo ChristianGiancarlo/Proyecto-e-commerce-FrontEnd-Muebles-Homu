@@ -44,9 +44,11 @@ if (productsContainer) {
                     <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
                         <p>${product.description}</p>
-                        <p class="text-muted">$${product.price.toLocaleString()}</p>
-                        <button class="btn btn-dark w-100 add-to-cart" data-id="${product.id}">Agregar</button>
-                        <button class="btn btn-warning w-100 btn-sm mt-1 ver-mas" data-id="${product.id}">Ver más</button>
+                        <div class="botones mt-auto">
+                            <p class="text-muted">$${product.price.toLocaleString()}</p>
+                            <button class="btn btn-dark w-100 add-to-cart" data-id="${product.id}">Agregar</button>
+                            <button class="btn btn-warning w-100 btn-sm mt-1 ver-mas" data-id="${product.id}">Ver más</button>
+                        </div>
                     </div>
                 </div>
             </div>
