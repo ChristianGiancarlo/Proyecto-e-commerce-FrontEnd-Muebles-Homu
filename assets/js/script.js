@@ -65,7 +65,7 @@ document.addEventListener("click", e => {
         const id = e.target.dataset.id;
 
         const product = products.find(p => p.id == id);
-        if (!product) return; // Evita errores silenciosos
+        if (!product) return;
 
         cart.push(product);
 
