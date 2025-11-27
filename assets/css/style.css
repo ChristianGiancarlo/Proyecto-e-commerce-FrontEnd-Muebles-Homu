@@ -88,9 +88,3 @@ header {
     margin-bottom: 0.5rem;
 }
 
-.footer-links a:hover,
-.footer-social a:hover {
-    color: #6c757d;
-    /* gris suave al pasar el mouse */
-    text-decoration: underline;
-}
