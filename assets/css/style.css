@@ -16,14 +16,36 @@ header {
     padding-top: 120px;
 }
 
-.hero-section img {
-    width: 500px;
-    z-index: 1;
+.hero-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-section .circuloImagen {
-    width: 350px;
-    height: 350px;
+@media (min-width: 768px) {
+    .hero-img {
+        display: block;
+        text-align: right;
+    }
+}
+
+.img-hero {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+.circuloImagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 500px;
+    height: 500px;
 }
 
 .category-seccion {
@@ -87,3 +109,13 @@ header {
     margin-bottom: 0.5rem;
 }
 
+@media (max-width: 420px) {
+    .img-hero {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .circuloImagen {
+        width: 120px;
+        height: 120px;
+    }
+}
