@@ -35,25 +35,25 @@ const products = [
 
 const productsContainer = document.getElementById("products-container");
 
-products.forEach(product => {
-    const card = `
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card shadow-sm h-100">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="">${product.description}</p>
-                    <p class="text-muted">$${product.price.toLocaleString()}</p>
-                    <button class="btn btn-dark w-100 add-to-cart" data-id="${product.id}">
-                        Agregar
-                    </button>
-                    <button class="btn btn-warning w-100 btn-sm mt-1 ver-mas" data-id="${product.id}">Ver más</button>
+if (productsContainer) {
+    products.forEach(product => {
+        const card = `
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm h-100">
+                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p>${product.description}</p>
+                        <p class="text-muted">$${product.price.toLocaleString()}</p>
+                        <button class="btn btn-dark w-100 add-to-cart" data-id="${product.id}">Agregar</button>
+                        <button class="btn btn-warning w-100 btn-sm mt-1 ver-mas" data-id="${product.id}">Ver más</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
-    productsContainer.innerHTML += card;
-});
+        `;
+        productsContainer.innerHTML += card;
+    });
+}
 
 let cart = [];
 let cartCount = 0;
@@ -73,7 +73,7 @@ document.addEventListener("click", e => {
         cartCountBadge.textContent = cartCount;
     }
 
-     if (e.target.classList.contains("ver-mas")) {
+    if (e.target.classList.contains("ver-mas")) {
         const id = e.target.dataset.id;
 
         localStorage.setItem("productoSeleccionado", id);
@@ -107,3 +107,16 @@ function renderCartItems() {
     `).join("");
 }
 
+if (location.pathname.includes("detalle.html")) {
+    const id = localStorage.getItem("productoSeleccionado");
+    const product = products.find(p => p.id == id);
+
+    if (product) {
+        document.getElementById("detalle-title").textContent = product.name;
+        document.getElementById("detalle-img").src = product.image;
+        document.getElementById("detalle-price").textContent = "$" + product.price.toLocaleString();
+        document.getElementById("detalle-desc").textContent = product.description;
+
+        document.getElementById("btnAgregarDetalle").dataset.id = product.id;
+    }
+}

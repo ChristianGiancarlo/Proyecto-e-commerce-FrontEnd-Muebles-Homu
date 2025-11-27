@@ -2,6 +2,10 @@ body {
     font-family: "IBM Plex Serif", serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     background-color: #efca89;
 }
@@ -21,6 +25,10 @@ header {
 .hero-section .circuloImagen {
     width: 350px;
     height: 350px;
+}
+
+.category-seccion {
+    background-color: #f5f4ef;
 }
 
 .category-img {
@@ -52,4 +60,37 @@ header {
 .card-img-top {
     height: 200px;
     object-fit: contain;
+}
+
+.contacto-seccion {
+    background-color: #f5f4ef;
+}
+
+.detalle-producto-seccion {
+    min-height: 50vh;
+    background-color: #f5dcb2;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.footer {
+    font-size: 0.9rem;
+}
+
+.footer-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.footer-description {
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #6c757d;
+    /* gris suave al pasar el mouse */
+    text-decoration: underline;
 }

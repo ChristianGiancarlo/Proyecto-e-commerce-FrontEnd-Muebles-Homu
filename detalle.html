@@ -15,7 +15,7 @@
             <div class="container">
 
                 <!-- Logo -->
-                <a class="navbar-brand fw-bold" href="#">Homu</a>
+                <a class="navbar-brand fw-bold" href="index.html">Homu</a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,7 +39,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
 
                     </ul>
@@ -48,15 +48,88 @@
             </div>
         </nav>
     </header>
-    <section>
-        <div class="container">
+    <section class="detalle-producto-seccion">
+        <div class="container mt-5">
             <div id="productDetail" class="row">
-                <!-- Aquí se cargará automáticamente -->
+                <div class="col-md-6">
+                    <img id="detalle-img" class="img-fluid" alt="Producto">
+                </div>
+
+                <div class="col-md-6">
+                    <h2 id="detalle-title"></h2>
+                    <p id="detalle-price" class="fw-bold text-success"></p>
+                    <p id="detalle-desc" class="text-muted"></p>
+
+                    <button class="btn btn-dark add-to-cart mt-3" id="btnAgregarDetalle" data-id="">
+                        Agregar al carrito
+                    </button>
+                </div>
             </div>
         </div>
     </section>
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mi carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <p class="text-muted">Tu carrito está vacío.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <section id="contacto" class="py-5 contacto-seccion">
+        <div class="container">
+            <h2 class="mb-4">Contacto</h2>
 
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <input type="email" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" rows="4"></textarea>
+                </div>
+
+                <button class="btn btn-dark">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer bg-light text-dark py-3">
+        <div class="container text-center">
+            <h4 class="footer-brand mb-2">Homu</h4>
+            <p class="footer-description mb-3">Muebles minimalistas y funcionales para tu hogar.</p>
+
+            <div class="footer-links mb-3">
+                <a href="index.html" class="text-dark mx-2 text-decoration-none">Home</a>
+                <a href="index.html" class="text-dark mx-2 text-decoration-none" >Productos</a>
+                <a href="#contacto" class="text-dark mx-2 text-decoration-none">Contacto</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" class="text-dark mx-2"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fa-brands fa-pinterest-p"></i></a>
+            </div>
+
+            <p class="small mt-3 mb-0">&copy; 2025 Homu. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
