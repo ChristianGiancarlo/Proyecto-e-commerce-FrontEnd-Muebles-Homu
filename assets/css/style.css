@@ -1,0 +1,55 @@
+body {
+    font-family: "IBM Plex Serif", serif;
+}
+
+header {
+    background-color: #efca89;
+}
+
+.hero-section {
+    background-color: #efca89;
+    /* tu color */
+    min-height: 90vh;
+    padding-top: 120px;
+}
+
+.hero-section img {
+    width: 500px;
+    z-index: 1;
+}
+
+.hero-section .circuloImagen {
+    width: 350px;
+    height: 350px;
+}
+
+.category-img {
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card {
+    cursor: pointer;
+}
+
+.category-card:hover .category-img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+}
