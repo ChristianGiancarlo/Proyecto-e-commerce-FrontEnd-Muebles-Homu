@@ -1,2 +1,7 @@
-# Proyecto-e-commerce-FrontEnd-Muebles-Homu
-Proyecto donde se desarrolla el FrontEnd de un E-commerce donde se venden muebles usando tecnologias como HTML, CSS, JS, Bootstrap
+# Homu - Tienda de Muebles Minimalistas
+
+Proyecto de e-commerce minimalista realizado en el bootcamp.  
+Permite explorar productos y navegar por secciones de la tienda.
+
+## Tecnologías
+HTML, CSS, JavaScript, Bootstrap 5, Font Awesome
